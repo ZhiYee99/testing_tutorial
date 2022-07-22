@@ -1,0 +1,5 @@
+npm i react-router-dom
+
+npm i @chakra-ui/react
+
+npm i @hookform/resolvers
