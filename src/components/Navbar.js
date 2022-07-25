@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <>
       {/** Nav button for desktop */}
-      <Box display={["none", "none", "none", "block"]}>
+      <Box display={["none", "none", "none", "block"]} m='10px'>
         <Flex>
           {/**Logo Box*/}
           <Box>
@@ -141,7 +141,7 @@ function Navbar() {
           <Box alignSelf='center'>
             <Flex>
               <Menu>
-                <MenuItem w='80px'>
+                <MenuItem w='60px'>
                   <NavLink as={Link} to='/login'>
                     Login
                   </NavLink>
@@ -149,12 +149,17 @@ function Navbar() {
               </Menu>
 
               <Menu>
-                <MenuItem>
-                <Button colorScheme='blue'>
-                    <NavLink as={Link} to='/register'>
-                      Register
-                    </NavLink>
-                  </Button>
+                <MenuItem w='90px'>
+                  <NavLink
+                    as={Link}
+                    to='/register'
+                    border='1px solid gray'
+                    borderRadius='5px'
+                    p='5px'
+                    _hover={{ bg: "blue", color: "white" }}
+                  >
+                    Register
+                  </NavLink>
                 </MenuItem>
               </Menu>
             </Flex>
@@ -164,7 +169,7 @@ function Navbar() {
 
       {/** Hidden Nav button for mobile */}
       <Box>
-        <Box display={["block", "block", "block", "none", "none"]}>
+        <Box display={["block", "block", "block", "none", "none"]} m='10px'>
           <Flex justifyContent='space-between' alignItems='center'>
             <Link to='/'>
               <Image src={logo} m={["15px", "20px", "15px"]} />

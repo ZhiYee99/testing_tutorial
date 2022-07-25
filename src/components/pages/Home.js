@@ -1,16 +1,8 @@
 import React from "react";
-import {
-  Grid,
-  GridItem,
-  Box,
-  Button,
-  Text,
-  Image,
-  Flex,
-  Center,
-} from "@chakra-ui/react";
-import { Heading, Link } from "@chakra-ui/react";
+import { Box, Button, Text, Image, Flex } from "@chakra-ui/react";
+
 import heroImage from "../images/image-hero-desktop.png";
+import heroImageMobile from "../images/image-hero-mobile.png";
 import databiz from "../images/client-databiz.svg";
 import audiophile from "../images/client-audiophile.svg";
 import meet from "../images/client-meet.svg";
@@ -21,101 +13,73 @@ import "@fontsource/open-sans/700.css";
 function Home() {
   return (
     <>
-      {/*<Grid m='10px 80px'
-      h='750px'
-      templateRows='repeat(4, 1fr)'
-      templateColumns='repeat(2, 1fr)'
-      gap={1}
-    >
-
-      <GridItem colSpan={1}>
-        <Text fontSize='68px' fontWeight='bold' p='20px 50px'>Make {'\n'} remote work</Text>
-      </GridItem>
-
-      <GridItem rowSpan={4} colSpan={1}>
-        <Image src={heroImage} h='750px'/>
-      </GridItem>
-
-      <GridItem colSpan={1}>
-        <Text p='50px' w='80%' color='grey'>Get your team in sync, no matter you location. 
-          Streamline processes, create team rituals, and watch productivity soar.
-        </Text>
-      </GridItem>
-
-      <GridItem colSpan={1}>
-        <Button m='50px' bg={['red','green','black']} color='white' _hover={{bg:'white', color:'black'}}>Learn more</Button>
-      </GridItem>
-
-      <GridItem colSpan={1}>
-        <Flex ml='30px'>
-          <Image src={databiz} m='5px 20px'/>
-          <Image src={audiophile} m='5px 20px'/>
-          <Image src={meet} m='5px 20px'/>
-          <Image src={maker} m='5px 20px'/>
-        </Flex>
-        
-      </GridItem>
-      
-      
-  </Grid>*/}
-
       <Flex
-        m={["20px 40px", "20px 60px", "20px 80px"]}
+        m={["20px 10px", "20px 30px", "20px 50px"]}
         flexDir={["column-reverse", "column-reverse", "row"]}
       >
-        <Box w={['100%','100%','50%']}>
-          <Text
-            fontSize={["20px", "40px", "60px"]}
-            fontWeight='bold'
-            p='5px'  
-          >
-            Make {"\n"} remote work
-          </Text>
-          <Text
-            fontSize={["12px", "15px", "24px"]}
-            p='5px'
-            color='grey'
-            w={["100%", "80%", "80%"]}
-          >
-            Get your team in sync, no matter you location. Streamline processes,
-            create team rituals, and watch productivity soar.
-          </Text>
-          <Center>
-            <Button
-              m={["30px 0px", "30px 0px", "50px 0px"]}
-              bg={["red", "green", "blue", "purple", "black"]}
-              color='white'
-              _hover={{ bg: "white", color: "black" }}
+        <Flex
+          w={["100%", "100%", "50%"]}
+          flexDir='column'
+          justifyContent='space-between'
+        >
+          <Box>
+            <Text fontSize={["20px", "40px", "60px"]} fontWeight='bold' p='5px'>
+              Make {"\n"} remote work
+            </Text>
+            <Text
+              fontSize={["12px", "15px", "24px"]}
+              p='5px'
+              color='grey'
+              w={["100%", "80%", "80%"]}
             >
-              Learn more
-            </Button>
-          </Center>
-          <Center>
-            <Flex flexDir={["column", "column", "column", "row", "row"]}>
-              <Image
-                src={databiz}
-                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
-              />
-              <Image
-                src={audiophile}
-                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
-              />
-              <Image
-                src={meet}
-                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
-              />
-              <Image
-                src={maker}
-                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
-              />
+              Get your team in sync, no matter you location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </Text>
+            <Flex
+              justifyContent={["center", "normal", "normal"]}
+              alignItems={["center", "normal", "normal"]}
+            >
+              <Button
+                m={["30px 0px", "30px 0px", "50px 0px"]}
+                bg='black'
+                color='white'
+                _hover={{ bg: "white", color: "black" }}
+              >
+                Learn more
+              </Button>
             </Flex>
-          </Center>
-        </Box>
-        <Box w={['100%','100%','50%']}>
+          </Box>
+
+          <Box position='bottom'>
+            <Flex flexDir={["row", "row", "row", "row", "row"]} gap='30px'>
+              <Box w='100%'>
+                <Image src={databiz} />
+              </Box>
+              <Box w='100%'>
+                <Image src={audiophile} />
+              </Box>
+              <Box w='100%'>
+                <Image src={meet} />
+              </Box>
+              <Box w='100%'>
+                <Image src={maker} />
+              </Box>
+            </Flex>
+          </Box>
+        </Flex>
+
+        <Box w={["100%", "100%", "50%"]}>
           <Image
             src={heroImage}
-            h={["350px", "500px", "750px"]}
-            w={["820px", "560px", "800px"]}
+            w='80%'
+            h='100%'
+            display={["none", "none", "none", "block"]}
+          />
+          <Image
+            src={heroImageMobile}
+            w='100%'
+            h='100%'
+            display={["block", "block", "block", "none", "none"]}
           />
         </Box>
       </Flex>

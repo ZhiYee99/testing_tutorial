@@ -15,19 +15,13 @@ import Register from "./components/pages/Register";
 import OurTeam from "./components/pages/OurTeam";
 import Navbar from "./components/Navbar";
 
-
 function App() {
-
-  
-
   return (
     <>
       <Router>
-        <Box m='10px'>
-          
+       
           <Navbar />
-         
-        </Box>
+       
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/todo' element={<Todo />}></Route>

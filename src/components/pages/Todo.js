@@ -6,7 +6,7 @@ export function Todo() {
   return (
     <>
       <Box m={["20px 40px", "20px 60px", "20px 80px"]}>
-        <Text fontSize='larger'>To-do List</Text>
+        <Text fontSize='larger' p='10px'>To-do List</Text>
         <Tabs size='md' variant='enclosed'>
           <TabList>
             <Tab>Todo</Tab>
