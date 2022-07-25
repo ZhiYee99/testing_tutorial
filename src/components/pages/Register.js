@@ -1,4 +1,6 @@
-// import { useForm } from "react-hook-form";
+import React from "react";
+import {Text} from '@chakra-ui/react';
+{/*// import { useForm } from "react-hook-form";
 // import { useState } from "react";
 // import {
 //   FormErrorMessage,
@@ -13,7 +15,7 @@
 // import "@fontsource/raleway/400.css";
 // import "@fontsource/open-sans/700.css";
 
-{/*function Register() {
+function Register() {
   const {
     handleSubmit,
     register,
@@ -134,3 +136,14 @@
 export default Register();
 */}
 
+
+export function Register() {
+  return (
+    <>
+      <Text fontSize='larger'>Register</Text>
+       
+   </>
+  );
+ }
+  
+ export default Register;

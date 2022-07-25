@@ -50,16 +50,14 @@ function Navbar() {
           {/**Logo Box*/}
           <Box>
             <Link to='/'>
-              <Image src={logo} m={['15px','20px','15px']}/>
+              <Image src={logo} m={["15px", "20px", "20px"]} />
             </Link>
           </Box>
 
           {/**Button Box */}
-          <Box>
+          <Box alignSelf='center'>
             <Menu>
-              <MenuButton p='5px' m='5px'>
-                Features {<ChevronDownIcon />}
-              </MenuButton>
+              <MenuButton>Features {<ChevronDownIcon />}</MenuButton>
               <MenuList bg='aliceblue' p='10px'>
                 <MenuItem>
                   <NavLink as={Link} to='/todo'>
@@ -97,9 +95,7 @@ function Navbar() {
             </Menu>
 
             <Menu>
-              <MenuButton p='5px' m='5px'>
-                Company {<ChevronDownIcon />}
-              </MenuButton>
+              <MenuButton> Company {<ChevronDownIcon />}</MenuButton>
               <MenuList bg='aliceblue' p='10px'>
                 <MenuItem>
                   <NavLink as={Link} to='./history'>
@@ -120,10 +116,10 @@ function Navbar() {
             </Menu>
           </Box>
 
-          <Box m='10px 0px'>
+          <Box alignSelf='center'>
             <Flex>
               <Menu w='20%'>
-                <MenuItem p='5px' m='5px' w='80px' h='30px'>
+                <MenuItem w='80px'>
                   <NavLink as={Link} to='/careers'>
                     Careers
                   </NavLink>
@@ -131,7 +127,7 @@ function Navbar() {
               </Menu>
 
               <Menu w='20%'>
-                <MenuItem p='5px' m='5px' w='80px' h='30px'>
+                <MenuItem w='80px'>
                   <NavLink as={Link} to='/about'>
                     About
                   </NavLink>
@@ -142,28 +138,23 @@ function Navbar() {
 
           <Spacer />
           {/**Login, Register Box*/}
-          <Box m='10px 0px'>
+          <Box alignSelf='center'>
             <Flex>
-              <Menu w='20%'>
-                <MenuItem p='5px' m='5px' w='80px' h='30px'>
+              <Menu>
+                <MenuItem w='80px'>
                   <NavLink as={Link} to='/login'>
                     Login
                   </NavLink>
                 </MenuItem>
               </Menu>
 
-              <Menu w='20%'>
-                <MenuItem
-                  p='5px'
-                  m='5px'
-                  w='80px'
-                  h='30px'
-                  border='1px solid grey'
-                  borderRadius='8px'
-                >
-                  <NavLink as={Link} to='/register'>
-                    Register
-                  </NavLink>
+              <Menu>
+                <MenuItem>
+                <Button colorScheme='blue'>
+                    <NavLink as={Link} to='/register'>
+                      Register
+                    </NavLink>
+                  </Button>
                 </MenuItem>
               </Menu>
             </Flex>
@@ -174,158 +165,160 @@ function Navbar() {
       {/** Hidden Nav button for mobile */}
       <Box>
         <Box display={["block", "block", "block", "none", "none"]}>
-          <Link to='/'>
-            <Image src={logo}  m={['15px','20px','15px']} />
-          </Link>
+          <Flex justifyContent='space-between' alignItems='center'>
+            <Link to='/'>
+              <Image src={logo} m={["15px", "20px", "15px"]} />
+            </Link>
 
-          <Button
-            ref={btnRef}
-            color='black'
-            onClick={onOpen}
-            display={["block", "block", "block", "none", "none"]}
-            float='right'
-          >
-            <HamburgerIcon />
-          </Button>
-          <Drawer
-            isOpen={isOpen}
-            placement='right'
-            onClose={onClose}
-            finalFocusRef={btnRef}
-          >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader></DrawerHeader>
+            <Button
+              ref={btnRef}
+              color='black'
+              onClick={onOpen}
+              display={["block", "block", "block", "none", "none"]}
+              float='right'
+            >
+              <HamburgerIcon />
+            </Button>
+            <Drawer
+              isOpen={isOpen}
+              placement='right'
+              onClose={onClose}
+              finalFocusRef={btnRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader></DrawerHeader>
 
-              <DrawerBody>
-                <Box m='10px 0px'>
-                  <UnorderedList listStyleType='none'>
-                    <ListItem>
-                      <Menu>
-                        <MenuButton p='5px' m='5px'>
-                          Features {<ChevronDownIcon />}
-                        </MenuButton>
-                        <MenuList bg='aliceblue' p='10px'>
-                          <MenuItem>
-                            <NavLink as={Link} to='/todo'>
-                              <Flex>
-                                <Image
-                                  src={todoIcon}
-                                  m='5px'
-                                  h='15px'
-                                  w='15px'
-                                />
-                                Todo List
-                              </Flex>
+                <DrawerBody>
+                  <Box m='10px 0px'>
+                    <UnorderedList listStyleType='none'>
+                      <ListItem>
+                        <Menu>
+                          <MenuButton p='5px' m='5px'>
+                            Features {<ChevronDownIcon />}
+                          </MenuButton>
+                          <MenuList bg='aliceblue' p='10px'>
+                            <MenuItem>
+                              <NavLink as={Link} to='/todo'>
+                                <Flex>
+                                  <Image
+                                    src={todoIcon}
+                                    m='5px'
+                                    h='15px'
+                                    w='15px'
+                                  />
+                                  Todo List
+                                </Flex>
+                              </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                              <NavLink as={Link} to='/calendar'>
+                                <Flex>
+                                  <Image
+                                    src={calendarIcon}
+                                    m='5px'
+                                    h='15px'
+                                    w='15px'
+                                  />
+                                  Calendar
+                                </Flex>
+                              </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                              <NavLink as={Link} to='/reminder'>
+                                <Flex>
+                                  <Image
+                                    src={remindersIcon}
+                                    m='5px'
+                                    h='15px'
+                                    w='15px'
+                                  />
+                                  Reminder
+                                </Flex>
+                              </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                              <NavLink as={Link} to='/planning'>
+                                <Flex>
+                                  <Image
+                                    src={planningIcon}
+                                    m='5px'
+                                    h='15px'
+                                    w='15px'
+                                  />
+                                  Planning
+                                </Flex>
+                              </NavLink>
+                            </MenuItem>
+                          </MenuList>
+                        </Menu>
+                      </ListItem>
+                      <ListItem>
+                        <Menu>
+                          <MenuButton p='5px' m='5px'>
+                            Company {<ChevronDownIcon />}
+                          </MenuButton>
+                          <MenuList bg='aliceblue' p='10px'>
+                            <MenuItem>
+                              <NavLink as={Link} to='./history'>
+                                History
+                              </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                              <NavLink as={Link} to='/OurTeam'>
+                                Our Teams
+                              </NavLink>
+                            </MenuItem>
+                            <MenuItem>
+                              <NavLink as={Link} to='/blog'>
+                                Blog
+                              </NavLink>
+                            </MenuItem>
+                          </MenuList>
+                        </Menu>
+                      </ListItem>
+                      <ListItem>
+                        <Menu>
+                          <MenuItem p='5px' m='5px' w='80px' h='30px'>
+                            <NavLink as={Link} to='/careers'>
+                              Careers
                             </NavLink>
                           </MenuItem>
-                          <MenuItem>
-                            <NavLink as={Link} to='/calendar'>
-                              <Flex>
-                                <Image
-                                  src={calendarIcon}
-                                  m='5px'
-                                  h='15px'
-                                  w='15px'
-                                />
-                                Calendar
-                              </Flex>
+                        </Menu>
+                      </ListItem>
+                      <ListItem>
+                        <Menu>
+                          <MenuItem p='5px' m='5px' w='80px' h='30px'>
+                            <NavLink as={Link} to='/about'>
+                              About
                             </NavLink>
                           </MenuItem>
-                          <MenuItem>
-                            <NavLink as={Link} to='/reminder'>
-                              <Flex>
-                                <Image
-                                  src={remindersIcon}
-                                  m='5px'
-                                  h='15px'
-                                  w='15px'
-                                />
-                                Reminder
-                              </Flex>
-                            </NavLink>
-                          </MenuItem>
-                          <MenuItem>
-                            <NavLink as={Link} to='/planning'>
-                              <Flex>
-                                <Image
-                                  src={planningIcon}
-                                  m='5px'
-                                  h='15px'
-                                  w='15px'
-                                />
-                                Planning
-                              </Flex>
-                            </NavLink>
-                          </MenuItem>
-                        </MenuList>
-                      </Menu>
-                    </ListItem>
-                    <ListItem>
-                      <Menu>
-                        <MenuButton p='5px' m='5px'>
-                          Company {<ChevronDownIcon />}
-                        </MenuButton>
-                        <MenuList bg='aliceblue' p='10px'>
-                          <MenuItem>
-                            <NavLink as={Link} to='./history'>
-                              History
-                            </NavLink>
-                          </MenuItem>
-                          <MenuItem>
-                            <NavLink as={Link} to='/OurTeam'>
-                              Our Teams
-                            </NavLink>
-                          </MenuItem>
-                          <MenuItem>
-                            <NavLink as={Link} to='/blog'>
-                              Blog
-                            </NavLink>
-                          </MenuItem>
-                        </MenuList>
-                      </Menu>
-                    </ListItem>
-                    <ListItem>
-                      <Menu>
-                        <MenuItem p='5px' m='5px' w='80px' h='30px'>
-                          <NavLink as={Link} to='/careers'>
-                            Careers
-                          </NavLink>
-                        </MenuItem>
-                      </Menu>
-                    </ListItem>
-                    <ListItem>
-                      <Menu>
-                        <MenuItem p='5px' m='5px' w='80px' h='30px'>
-                          <NavLink as={Link} to='/about'>
-                            About
-                          </NavLink>
-                        </MenuItem>
-                      </Menu>
-                    </ListItem>
-                  </UnorderedList>
-                </Box>
+                        </Menu>
+                      </ListItem>
+                    </UnorderedList>
+                  </Box>
 
-                <Box m='10px 0px'>
-                  <Flex></Flex>
-                </Box>
-              </DrawerBody>
+                  <Box m='10px 0px'>
+                    <Flex></Flex>
+                  </Box>
+                </DrawerBody>
 
-              <DrawerFooter>
-                <Button variant='outline' mr={3}>
-                  <NavLink as={Link} to='/login'>
-                    Login
-                  </NavLink>
-                </Button>
-                <Button colorScheme='blue'>
-                  <NavLink as={Link} to='/register'>
-                    Register
-                  </NavLink>
-                </Button>
-              </DrawerFooter>
-            </DrawerContent>
-          </Drawer>
+                <DrawerFooter>
+                  <Button variant='outline' mr={3}>
+                    <NavLink as={Link} to='/login'>
+                      Login
+                    </NavLink>
+                  </Button>
+                  <Button colorScheme='blue'>
+                    <NavLink as={Link} to='/register'>
+                      Register
+                    </NavLink>
+                  </Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </Flex>
         </Box>
       </Box>
     </>

@@ -7,6 +7,7 @@ import {
   Text,
   Image,
   Flex,
+  Center,
 } from "@chakra-ui/react";
 import { Heading, Link } from "@chakra-ui/react";
 import heroImage from "../images/image-hero-desktop.png";
@@ -58,9 +59,16 @@ function Home() {
       
   </Grid>*/}
 
-      <Flex m={['20px 40px','20px 60px','20px 80px']} flexDir={["column-reverse", "row"]}>
-        <Box>
-          <Text fontSize={["20px", "40px", "60px"]} fontWeight='bold' p='5px' w={["100%", "80%", "80%"]}>
+      <Flex
+        m={["20px 40px", "20px 60px", "20px 80px"]}
+        flexDir={["column-reverse", "column-reverse", "row"]}
+      >
+        <Box w={['100%','100%','50%']}>
+          <Text
+            fontSize={["20px", "40px", "60px"]}
+            fontWeight='bold'
+            p='5px'  
+          >
             Make {"\n"} remote work
           </Text>
           <Text
@@ -72,27 +80,43 @@ function Home() {
             Get your team in sync, no matter you location. Streamline processes,
             create team rituals, and watch productivity soar.
           </Text>
-          <Button
-            m={['30px 0px', '30px 0px', '50px 0px']}
-            bg={["red", "green", "black"]}
-            color='white'
-            _hover={{ bg: "white", color: "black" }}
-          >
-            Learn more
-          </Button>
-          <Flex 
-            flexDir={["column", "column", "row", "row", "row"]} 
-            w={["50%", "50%", "20%", "20%", "100%"]}
-           
-          >
-            <Image src={databiz}  m={['30px 2px','20px 5px','5px','7px','15px']}/>
-            <Image src={audiophile}  m={['30px 2px','20px 5px','5px','7px','15px']}/>
-            <Image src={meet} m={['30px 2px','20px 5px','5px','7px','15px']}/>
-            <Image src={maker} m={['30px 2px','20px 5px','5px','7px','15px']}/>
-          </Flex>
+          <Center>
+            <Button
+              m={["30px 0px", "30px 0px", "50px 0px"]}
+              bg={["red", "green", "blue", "purple", "black"]}
+              color='white'
+              _hover={{ bg: "white", color: "black" }}
+            >
+              Learn more
+            </Button>
+          </Center>
+          <Center>
+            <Flex flexDir={["column", "column", "column", "row", "row"]}>
+              <Image
+                src={databiz}
+                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
+              />
+              <Image
+                src={audiophile}
+                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
+              />
+              <Image
+                src={meet}
+                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
+              />
+              <Image
+                src={maker}
+                m={["30px 2px", "20px 5px", "15px 5px", "7px", "15px"]}
+              />
+            </Flex>
+          </Center>
         </Box>
-        <Box>
-          <Image src={heroImage} h={['350px','500px','750px']} w={['820px','1056px','1056px']}/> 
+        <Box w={['100%','100%','50%']}>
+          <Image
+            src={heroImage}
+            h={["350px", "500px", "750px"]}
+            w={["820px", "560px", "800px"]}
+          />
         </Box>
       </Flex>
     </>
