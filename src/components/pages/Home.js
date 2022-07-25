@@ -1,22 +1,26 @@
-import React from 'react';
-import {ChakraProvider, Grid, GridItem, Box, Button, Text, Image, Flex} from '@chakra-ui/react';
-import {Heading, Link} from '@chakra-ui/react';
-import heroImage from '../images/image-hero-desktop.png';
-import databiz from '../images/client-databiz.svg';
-import audiophile from '../images/client-audiophile.svg';
-import meet from '../images/client-meet.svg';
-import maker from '../images/client-maker.svg';
-import '@fontsource/raleway/400.css'
-import '@fontsource/open-sans/700.css'
-import theme from '../theme'
+import React from "react";
+import {
+  Grid,
+  GridItem,
+  Box,
+  Button,
+  Text,
+  Image,
+  Flex,
+} from "@chakra-ui/react";
+import { Heading, Link } from "@chakra-ui/react";
+import heroImage from "../images/image-hero-desktop.png";
+import databiz from "../images/client-databiz.svg";
+import audiophile from "../images/client-audiophile.svg";
+import meet from "../images/client-meet.svg";
+import maker from "../images/client-maker.svg";
+import "@fontsource/raleway/400.css";
+import "@fontsource/open-sans/700.css";
 
-export function Home() {
+function Home() {
   return (
     <>
-    <ChakraProvider theme = {theme}>
-     
-    
-    {/*<Grid m='10px 80px'
+      {/*<Grid m='10px 80px'
       h='750px'
       templateRows='repeat(4, 1fr)'
       templateColumns='repeat(2, 1fr)'
@@ -54,28 +58,45 @@ export function Home() {
       
   </Grid>*/}
 
-    <Flex m='10px 80px' >
-      <Box w='50%'>
-        <Text fontSize='68px' fontWeight='bold' p='20px 50px'>Make {'\n'} remote work</Text>
-        <Text p='50px' w='80%' color='grey'>Get your team in sync, no matter you location. 
-          Streamline processes, create team rituals, and watch productivity soar.
-        </Text>
-        <Button m='50px' bg={['red','green','black']} color='white' _hover={{bg:'white', color:'black'}}>Learn more</Button>
-        <Flex ml='30px'>
-          <Image src={databiz} m='5px 20px'/>
-          <Image src={audiophile} m='5px 20px'/>
-          <Image src={meet} m='5px 20px'/>
-          <Image src={maker} m='5px 20px'/>
-        </Flex>
-      </Box>
-      <Box w='50%'>
-        <Image src={heroImage} h='750px'/>
-      </Box>
-
-    </Flex>
-    </ChakraProvider>
+      <Flex m={['20px 40px','20px 60px','20px 80px']} flexDir={["column-reverse", "row"]}>
+        <Box>
+          <Text fontSize={["20px", "40px", "60px"]} fontWeight='bold' p='5px' w={["100%", "80%", "80%"]}>
+            Make {"\n"} remote work
+          </Text>
+          <Text
+            fontSize={["12px", "15px", "24px"]}
+            p='5px'
+            color='grey'
+            w={["100%", "80%", "80%"]}
+          >
+            Get your team in sync, no matter you location. Streamline processes,
+            create team rituals, and watch productivity soar.
+          </Text>
+          <Button
+            m={['30px 0px', '30px 0px', '50px 0px']}
+            bg={["red", "green", "black"]}
+            color='white'
+            _hover={{ bg: "white", color: "black" }}
+          >
+            Learn more
+          </Button>
+          <Flex 
+            flexDir={["column", "column", "row", "row", "row"]} 
+            w={["50%", "50%", "20%", "20%", "100%"]}
+           
+          >
+            <Image src={databiz}  m={['30px 2px','20px 5px','5px','7px','15px']}/>
+            <Image src={audiophile}  m={['30px 2px','20px 5px','5px','7px','15px']}/>
+            <Image src={meet} m={['30px 2px','20px 5px','5px','7px','15px']}/>
+            <Image src={maker} m={['30px 2px','20px 5px','5px','7px','15px']}/>
+          </Flex>
+        </Box>
+        <Box>
+          <Image src={heroImage} h={['350px','500px','750px']} w={['820px','1056px','1056px']}/> 
+        </Box>
+      </Flex>
     </>
   );
- }
-  
- export default Home;
+}
+
+export default Home;
